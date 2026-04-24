@@ -4,8 +4,7 @@
 -- Run this entire file in MySQL Workbench
 -- ============================================================
 
-DROP DATABASE IF EXISTS bengaluru_lands;
-CREATE DATABASE bengaluru_lands;
+CREATE DATABASE IF NOT EXISTS bengaluru_lands;
 USE bengaluru_lands;
 
 -- ============================================================
@@ -466,411 +465,411 @@ SELECT area_id, current_price, growth_1yr,
 FROM (
 SELECT a.area_id, v.current_price, v.growth_1yr
 FROM areas a
-JOIN (
-  SELECT '1st Block Rajajinagar' AS name, 25200 AS current_price, 24.00 AS growth_1yr UNION ALL
-  SELECT 'Aavalahalli', 11554, 4.00 UNION ALL
-  SELECT 'Adarsh Palm Retreat', 18758, 2.00 UNION ALL
-  SELECT 'AECS Layout Marathahalli', 12519, 176.00 UNION ALL
-  SELECT 'Aga Abbas Ali Road', 16912, -4.00 UNION ALL
-  SELECT 'Agrahara Layout Main Road', 10412, -16.00 UNION ALL
-  SELECT 'Agrahara Main Road', 10409, 4.00 UNION ALL
-  SELECT 'Akshayanagar', 10712, 1.60 UNION ALL
-  SELECT 'Allalasandra Yelahanka', 10648, -24.00 UNION ALL
-  SELECT 'Ambalipura', 11682, 28.00 UNION ALL
-  SELECT 'Ambalipura Haralur', 14407, 20.00 UNION ALL
-  SELECT 'Ambalipura Sarjapur Road', 11885, 4.00 UNION ALL
-  SELECT 'Amrutahalli', 7874, -1.20 UNION ALL
-  SELECT 'Amruthahalli Main Road', 8894, -4.00 UNION ALL
-  SELECT 'Ananth Nagar', 6050, -4.00 UNION ALL
-  SELECT 'Anekal', 12703, 20.00 UNION ALL
-  SELECT 'Anekal Hosur Road', 12672, 20.00 UNION ALL
-  SELECT 'Anekal Main Road', 7406, 48.00 UNION ALL
-  SELECT 'AnjanaPura', 6991, 24.00 UNION ALL
-  SELECT 'Anjanapura Main Road', 9492, 0.00 UNION ALL
-  SELECT 'Arekere', 8368, -4.00 UNION ALL
-  SELECT 'Armane Nagar', 23451, 0.00 UNION ALL
-  SELECT 'Ashok Nagar', 27944, 12.00 UNION ALL
-  SELECT 'Attibele', 6775, 24.00 UNION ALL
-  SELECT 'Attibele Anekal Road', 6881, -28.00 UNION ALL
-  SELECT 'Attur Lake Road', 9463, 28.00 UNION ALL
-  SELECT 'Ayyappa Nagar Main Road', 9441, -4.00 UNION ALL
-  SELECT 'Bagalur Colony', 9962, 4.00 UNION ALL
-  SELECT 'Bagalur Main Road', 10372, 16.00 UNION ALL
-  SELECT 'Bagaluru', 10151, 12.00 UNION ALL
-  SELECT 'Balagere', 12284, -0.40 UNION ALL
-  SELECT 'Balagere Road', 13074, 16.00 UNION ALL
-  SELECT 'Banashankari', 10948, 24.00 UNION ALL
-  SELECT 'Banaswadi', 8920, 4.00 UNION ALL
-  SELECT 'Bangalore Chennai Highway', 8705, 20.00 UNION ALL
-  SELECT 'Bannerghatta Main Road', 10024, 4.00 UNION ALL
-  SELECT 'Bannerughatta', 12891, 12.00 UNION ALL
-  SELECT 'Basapura Main Road', 10415, 36.00 UNION ALL
-  SELECT 'Basapura Village Road', 10483, 16.00 UNION ALL
-  SELECT 'Basavanagudi', 14896, 4.00 UNION ALL
-  SELECT 'Basaveshwar Nagar', 10949, 84.00 UNION ALL
-  SELECT 'Battarahalli', 7446, -68.00 UNION ALL
-  SELECT 'Begur', 10508, 40.00 UNION ALL
-  SELECT 'Begur Hulimavu Road', 9286, 116.00 UNION ALL
-  SELECT 'Begur Koppa Road', 9234, 60.00 UNION ALL
-  SELECT 'Begur Road', 9669, 20.00 UNION ALL
-  SELECT 'Belathur', 8853, 8.00 UNION ALL
-  SELECT 'Belathur Main Road', 9972, 52.00 UNION ALL
-  SELECT 'Bellahalli Main Road', 10691, 4.00 UNION ALL
-  SELECT 'Bellandur', 15106, 4.00 UNION ALL
-  SELECT 'Bellary Road', 9911, 4.00 UNION ALL
-  SELECT 'Bengaluru Kanakapura Road', 10135, 4.00 UNION ALL
-  SELECT 'Bengaluru Main Road', 6775, 24.00 UNION ALL
-  SELECT 'Benson Town', 13503, 4.00 UNION ALL
-  SELECT 'Bhattarahalli', 10470, 24.00 UNION ALL
-  SELECT 'Bhoganhalli', 16095, 16.00 UNION ALL
-  SELECT 'Bhoopasandra Main Road', 10133, 0.00 UNION ALL
-  SELECT 'Bidarahalli', 10601, 1.20 UNION ALL
-  SELECT 'Bilekahalli', 7873, 8.00 UNION ALL
-  SELECT 'Bileshivale Main Road', 10379, 4.00 UNION ALL
-  SELECT 'Binny Pete', 14379, 8.00 UNION ALL
-  SELECT 'Block 1st Koramangala', 19019, 0.00 UNION ALL
-  SELECT 'Block 7th Jayanagar', 16583, 16.00 UNION ALL
-  SELECT 'Bommanahalli', 7433, 16.00 UNION ALL
-  SELECT 'Bommasandra', 7534, 40.00 UNION ALL
-  SELECT 'Bommasandra Jigani Link Road', 7208, 48.00 UNION ALL
-  SELECT 'Borewell Road', 12780, 8.00 UNION ALL
-  SELECT 'Brookefield', 11118, 16.00 UNION ALL
-  SELECT 'BTM Layout', 10086, 20.00 UNION ALL
-  SELECT 'Budigere', 10956, 8.00 UNION ALL
-  SELECT 'Budigere Cross', 11815, 32.00 UNION ALL
-  SELECT 'Budigere Road', 11495, 1.20 UNION ALL
-  SELECT 'Byatarayanapura', 16155, 72.00 UNION ALL
-  SELECT 'Cambridge Layout', 16596, 1.60 UNION ALL
-  SELECT 'Cambridge Road', 16840, 0.00 UNION ALL
-  SELECT 'Carmelaram', 11806, 20.00 UNION ALL
-  SELECT 'Chambenahalli', 8864, 12.00 UNION ALL
-  SELECT 'Chandapura', 6496, 20.00 UNION ALL
-  SELECT 'Chandapura Anekal Road', 7671, 32.00 UNION ALL
-  SELECT 'Chandapura Dommasandra Road', 7560, 0.00 UNION ALL
-  SELECT 'Channasandra', 10867, 44.00 UNION ALL
-  SELECT 'Channasandra Main Road', 10373, 12.00 UNION ALL
-  SELECT 'Chellikere', 11464, 12.00 UNION ALL
-  SELECT 'Chikka Thirupati Road', 12145, 4.00 UNION ALL
-  SELECT 'Chikkakannalli', 12832, 1.20 UNION ALL
-  SELECT 'Chokkanahalli', 10671, 0.80 UNION ALL
-  SELECT 'Choodasandra', 10377, 8.00 UNION ALL
-  SELECT 'Chunchgatta Main Road', 15309, 0.00 UNION ALL
-  SELECT 'Church Street', 26949, 36.00 UNION ALL
-  SELECT 'Coles Road', 11535, 0.00 UNION ALL
-  SELECT 'Cooke Town', 12970, 0.00 UNION ALL
-  SELECT 'Cox Town', 10074, 8.00 UNION ALL
-  SELECT 'Crescent Road', 13573, 0.00 UNION ALL
-  SELECT 'Cubbon Road', 13877, 12.00 UNION ALL
-  SELECT 'Cunningham Road', 18530, 8.00 UNION ALL
-  SELECT 'CV Raman Nagar', 9044, 12.00 UNION ALL
-  SELECT 'Dasarahalli Main Road', 11542, 4.00 UNION ALL
-  SELECT 'Davis Road', 13684, 4.00 UNION ALL
-  SELECT 'Defence Colony Indiranagar', 23284, 0.80 UNION ALL
-  SELECT 'Devanahalli', 9568, 16.00 UNION ALL
-  SELECT 'Devarabisanahalli', 16444, 0.00 UNION ALL
-  SELECT 'Devasthanagalu', 13436, 8.00 UNION ALL
-  SELECT 'Devinagar', 9100, 8.00 UNION ALL
-  SELECT 'Dickenson Road', 17373, 16.00 UNION ALL
-  SELECT 'Doddaballapur Main Road', 10042, 8.00 UNION ALL
-  SELECT 'Doddaballapura', 11564, 0.00 UNION ALL
-  SELECT 'Doddaballapura Main Road', 10037, 8.00 UNION ALL
-  SELECT 'Doddagubbi Main Road', 10394, 0.00 UNION ALL
-  SELECT 'Doddakallasandra', 9307, 16.00 UNION ALL
-  SELECT 'Doddakammanahalli Main Road', 11092, 32.00 UNION ALL
-  SELECT 'Doddakannelli', 12133, 16.00 UNION ALL
-  SELECT 'Doddakannelli Chikkanayakana Halli Road', 11836, 20.00 UNION ALL
-  SELECT 'Doddakannelli kaadubeesanahalli Road', 17967, 4.00 UNION ALL
-  SELECT 'Doddanagamangala Road', 9568, 0.00 UNION ALL
-  SELECT 'Doddanekundi', 6994, 12.00 UNION ALL
-  SELECT 'Doddanekundi Main Road', 7034, 12.00 UNION ALL
-  SELECT 'Dollars Colony Stage 2nd RMV', 13352, 56.00 UNION ALL
-  SELECT 'Domlur', 12247, 0.80 UNION ALL
-  SELECT 'Dommasandra', 10940, 0.40 UNION ALL
-  SELECT 'Double Road', 14455, 36.00 UNION ALL
-  SELECT 'Dr Vishnuvardhan Road', 8109, 8.00 UNION ALL
-  SELECT 'ECC Road', 15378, 1.60 UNION ALL
-  SELECT 'Electronic City', 8879, 24.00 UNION ALL
-  SELECT 'EPIP Zone', 16859, 4.00 UNION ALL
-  SELECT 'Gear School Road', 15423, 16.00 UNION ALL
-  SELECT 'Giri Nagar', 8615, 0.80 UNION ALL
-  SELECT 'GM Palya Main Road', 8280, 44.00 UNION ALL
-  SELECT 'Gottigere', 8923, 44.00 UNION ALL
-  SELECT 'Green Glen Layout', 15058, 12.00 UNION ALL
-  SELECT 'Gubbalala', 8490, 12.00 UNION ALL
-  SELECT 'Gubbalala Main Road', 8418, 16.00 UNION ALL
-  SELECT 'Gunjur', 10991, 8.00 UNION ALL
-  SELECT 'Gunjur Balagere Road', 10830, 0.00 UNION ALL
-  SELECT 'Gunjur Doddakannelli Road', 10480, 0.00 UNION ALL
-  SELECT 'Hadosiddapura', 14559, 4.00 UNION ALL
-  SELECT 'HAL', 15471, 0.80 UNION ALL
-  SELECT 'HAL Old Airport Road', 13580, 44.00 UNION ALL
-  SELECT 'Halasuru', 16977, 4.00 UNION ALL
-  SELECT 'Haralur', 13398, 12.00 UNION ALL
-  SELECT 'Haralur Main Road', 12633, 4.00 UNION ALL
-  SELECT 'Harlur', 12164, 36.00 UNION ALL
-  SELECT 'HBR Layout', 8273, 16.00 UNION ALL
-  SELECT 'Hebbal', 16337, 8.00 UNION ALL
-  SELECT 'Hebbal Kempapura', 9389, 8.00 UNION ALL
-  SELECT 'Hennur Bagalur Main Road', 9783, 4.00 UNION ALL
-  SELECT 'Hennur Bande', 11500, 12.00 UNION ALL
-  SELECT 'Hennur Gardens', 9986, 4.00 UNION ALL
-  SELECT 'Hennur Main Road', 10261, 1.60 UNION ALL
-  SELECT 'Hesarghatta Road', 10687, 8.00 UNION ALL
-  SELECT 'HMT Main Road', 10000, 0.80 UNION ALL
-  SELECT 'Holiday Village Road', 10491, 1.60 UNION ALL
-  SELECT 'Hongasandra', 6472, 0.00 UNION ALL
-  SELECT 'Hoodi', 9916, 1.20 UNION ALL
-  SELECT 'Hoodi Main Road', 9902, 16.00 UNION ALL
-  SELECT 'Horamavu', 7143, 16.00 UNION ALL
-  SELECT 'Horamavu Agara', 7258, 12.00 UNION ALL
-  SELECT 'Horamavu Agara Main Road', 7091, 16.00 UNION ALL
-  SELECT 'Horamavu Agara Road', 9975, 4.00 UNION ALL
-  SELECT 'Horamavu Main Road', 6995, 20.00 UNION ALL
-  SELECT 'Hosa Road', 10196, 16.00 UNION ALL
-  SELECT 'Hosa Road Area', 10720, 12.00 UNION ALL
-  SELECT 'Hosabasavanapura', 10391, 0.00 UNION ALL
-  SELECT 'Hosahalli Main Road', 14358, 8.00 UNION ALL
-  SELECT 'Hosapalya Main Road', 9403, 0.00 UNION ALL
-  SELECT 'Hoskote', 6944, 64.00 UNION ALL
-  SELECT 'Hoskote Chintamani Road', 7060, 72.00 UNION ALL
-  SELECT 'Hoskote Malur Road', 6781, 0.00 UNION ALL
-  SELECT 'Hosur Main Road', 16204, 4.00 UNION ALL
-  SELECT 'Hosur Road', 9178, 16.00 UNION ALL
-  SELECT 'HRBR Layout', 13259, 8.00 UNION ALL
-  SELECT 'HSR Extension', 9631, 4.00 UNION ALL
-  SELECT 'HSR Layout', 9363, 0.80 UNION ALL
-  SELECT 'Hulimangala Road', 8077, 0.00 UNION ALL
-  SELECT 'Hulimavu', 12598, 24.00 UNION ALL
-  SELECT 'Hulimavu Lake Road', 12608, 32.00 UNION ALL
-  SELECT 'Huskur Road', 7574, 60.00 UNION ALL
-  SELECT 'Hutchins Road', 12900, 4.00 UNION ALL
-  SELECT 'Huvinayakanahalli', 8776, 48.00 UNION ALL
-  SELECT 'Immadihalli', 9094, 44.00 UNION ALL
-  SELECT 'Indiranagar', 18773, 1.20 UNION ALL
-  SELECT 'ITPL', 15167, 56.00 UNION ALL
-  SELECT 'ITPL Main Road', 10187, 8.00 UNION ALL
-  SELECT 'Ittamadu Main Road', 10324, 20.00 UNION ALL
-  SELECT 'Jagajeevanram Nagar', 14425, 8.00 UNION ALL
-  SELECT 'Jakkur', 10907, 4.00 UNION ALL
-  SELECT 'Jakkur Road', 7937, 4.00 UNION ALL
-  SELECT 'Jakkuru Layout', 13692, 72.00 UNION ALL
-  SELECT 'Jalahalli', 8565, 0.80 UNION ALL
-  SELECT 'Jalahalli Cross Road', 10146, 0.00 UNION ALL
-  SELECT 'Jalahalli Road', 8491, 4.00 UNION ALL
-  SELECT 'Jalahalli West', 8387, 12.00 UNION ALL
-  SELECT 'Jambusavari Dinne Main Road', 9882, 8.00 UNION ALL
-  SELECT 'Jayamahal', 15534, 4.00 UNION ALL
-  SELECT 'Jayamahal Main Road', 15024, 1.20 UNION ALL
-  SELECT 'Jayanagar', 14290, 12.00 UNION ALL
-  SELECT 'JCR Layout', 14823, 24.00 UNION ALL
-  SELECT 'Jeevan Bima Nagar', 7850, 84.00 UNION ALL
-  SELECT 'Jigani', 5495, 20.00 UNION ALL
-  SELECT 'JP Nagar', 9893, 8.00 UNION ALL
-  SELECT 'Judicial Layout', 14004, 48.00 UNION ALL
-  SELECT 'K Channasandra Main Road', 6253, 0.00 UNION ALL
-  SELECT 'K Narayanapura Main Road', 10631, 12.00 UNION ALL
-  SELECT 'Kadabeesanahalli', 15937, 4.00 UNION ALL
-  SELECT 'Kadubeesanahalli', 11389, 36.00 UNION ALL
-  SELECT 'Kadubeesanahalli Road', 14250, 24.00 UNION ALL
-  SELECT 'Kadugodi', 9582, 4.00 UNION ALL
-  SELECT 'Kaggadasapura', 7032, 52.00 UNION ALL
-  SELECT 'Kaggadasapura Main Road', 8288, 36.00 UNION ALL
-  SELECT 'Kaikondrahalli', 14535, 24.00 UNION ALL
-  SELECT 'Kalena Agrahara', 10760, 4.00 UNION ALL
-  SELECT 'Kalkere Main Road', 7009, 20.00 UNION ALL
-  SELECT 'Kalyan Nagar', 9298, 12.00 UNION ALL
-  SELECT 'Kammanahalli', 16675, 4.00 UNION ALL
-  SELECT 'Kammanahalli Main Road', 9048, 8.00 UNION ALL
-  SELECT 'Kammasandra Electronic City', 6068, 4.00 UNION ALL
-  SELECT 'Kanakapura', 12920, 40.00 UNION ALL
-  SELECT 'Kanakapura Road', 10494, 8.00 UNION ALL
-  SELECT 'Kannamangala', 9824, 2.00 UNION ALL
-  SELECT 'Kannamangala Main Road', 10218, 12.00 UNION ALL
-  SELECT 'Kannuru Road', 10386, 4.00 UNION ALL
-  SELECT 'Kasavanahalli', 9764, 0.00 UNION ALL
-  SELECT 'Kasavanahalli Main Road', 12203, 12.00 UNION ALL
-  SELECT 'Kasturba Road', 26836, 32.00 UNION ALL
-  SELECT 'Kasturi Nagar', 8063, 0.00 UNION ALL
-  SELECT 'Kathriguppe Main Road', 13241, 1.20 UNION ALL
-  SELECT 'Kempegowda International Airport Road', 11071, 12.00 UNION ALL
-  SELECT 'Kengeri', 7480, 28.00 UNION ALL
-  SELECT 'Kengeri Kommaghatta Road', 7138, 20.00 UNION ALL
-  SELECT 'Kengeri Main Road', 6946, 16.00 UNION ALL
-  SELECT 'Kengeri Satellite Town', 7029, 8.00 UNION ALL
-  SELECT 'Kithaganur Main Road', 10115, 20.00 UNION ALL
-  SELECT 'Kodathi', 10715, 8.00 UNION ALL
-  SELECT 'Kodichikkanahalli Main Road', 7683, 4.00 UNION ALL
-  SELECT 'Kodigehalli', 6864, 60.00 UNION ALL
-  SELECT 'Kodigehalli Main Road', 7798, 20.00 UNION ALL
-  SELECT 'Kodihalli', 11694, 0.00 UNION ALL
-  SELECT 'Kodipalya Road', 7396, 28.00 UNION ALL
-  SELECT 'Kogilu', 10523, 8.00 UNION ALL
-  SELECT 'Kogilu Main Road', 10641, 0.80 UNION ALL
-  SELECT 'Konanakunte', 15387, 48.00 UNION ALL
-  SELECT 'Koppa Road', 10594, 0.80 UNION ALL
-  SELECT 'Koramangala', 15587, 4.00 UNION ALL
-  SELECT 'Kothanur', 10105, 12.00 UNION ALL
-  SELECT 'Krishna Rajendra Road', 12426, 0.00 UNION ALL
-  SELECT 'Krishnarajapura', 10558, 12.00 UNION ALL
-  SELECT 'Kudlu', 8389, 16.00 UNION ALL
-  SELECT 'Kudlu Gate', 13314, 1.20 UNION ALL
-  SELECT 'Kudlu Main Road', 11878, 4.00 UNION ALL
-  SELECT 'Kumaraswamy Layout', 8267, 24.00 UNION ALL
-  SELECT 'Kundalahalli', 10246, 8.00 UNION ALL
-  SELECT 'KV Jairam Road', 11583, 12.00 UNION ALL
-  SELECT 'Lal Bagh Main Road', 22606, 1.20 UNION ALL
-  SELECT 'Langford Road', 17544, 8.00 UNION ALL
-  SELECT 'Lavelle Road', 24178, 4.00 UNION ALL
-  SELECT 'Magadi Main Road', 12833, 8.00 UNION ALL
-  SELECT 'Mahadevapura', 8516, 4.00 UNION ALL
-  SELECT 'Mahatma Gandhi Road', 16068, 60.00 UNION ALL
-  SELECT 'Mallasandra', 11199, 20.00 UNION ALL
-  SELECT 'Malleshpalya Main Road', 8310, 44.00 UNION ALL
-  SELECT 'Malleshwaram', 15109, 0.80 UNION ALL
-  SELECT 'Manayata Tech Park', 12411, 108.00 UNION ALL
-  SELECT 'Manyata Tech Park Road', 11712, 12.00 UNION ALL
-  SELECT 'Marathahalli', 9242, 8.00 UNION ALL
-  SELECT 'Marathahalli Main Road', 8748, 44.00 UNION ALL
-  SELECT 'Marathahalli Sarjapur Outer Ring Road', 15145, 16.00 UNION ALL
-  SELECT 'Mathikere', 10124, 16.00 UNION ALL
-  SELECT 'Mavalli', 16429, 0.80 UNION ALL
-  SELECT 'Medahalli Kadugodi Road', 11651, 8.00 UNION ALL
-  SELECT 'Millers Road', 13658, 2.00 UNION ALL
-  SELECT 'Mission Road', 14984, 8.00 UNION ALL
-  SELECT 'MSR College Road', 10743, 1.60 UNION ALL
-  SELECT 'Munnekollal', 7564, 8.00 UNION ALL
-  SELECT 'Murgesh Pallya', 7603, 92.00 UNION ALL
-  SELECT 'Museum Road', 28255, 16.00 UNION ALL
-  SELECT 'Mysore Road', 8249, 1.20 UNION ALL
-  SELECT 'Naagarabhaavi', 6887, 12.00 UNION ALL
-  SELECT 'Nagarabhavi Main Road', 8217, 16.00 UNION ALL
-  SELECT 'Nagasandra', 9695, 16.00 UNION ALL
-  SELECT 'Nagasandra Main Road', 10147, 8.00 UNION ALL
-  SELECT 'Nagavara', 12167, 16.00 UNION ALL
-  SELECT 'Nallurhalli', 12607, 12.00 UNION ALL
-  SELECT 'Nandi Durga Road', 13732, 4.00 UNION ALL
-  SELECT 'Neeladri Road', 8669, 44.00 UNION ALL
-  SELECT 'New Airport Road', 10243, 8.00 UNION ALL
-  SELECT 'New BEL Road', 10403, 4.00 UNION ALL
-  SELECT 'Nice Ring Road', 9269, 24.00 UNION ALL
-  SELECT 'NRI Layout Main Road', 6410, 0.00 UNION ALL
-  SELECT 'Old Madras Road', 10714, 8.00 UNION ALL
-  SELECT 'Old Mysuru Road', 13279, 0.00 UNION ALL
-  SELECT 'Outer Ring Road', 9920, 0.00 UNION ALL
-  SELECT 'Padmanabhanagar', 8405, 72.00 UNION ALL
-  SELECT 'Pai Layout Mahadevapura', 7040, 1.60 UNION ALL
-  SELECT 'Palace Road', 17123, 4.00 UNION ALL
-  SELECT 'Panathur', 14536, 24.00 UNION ALL
-  SELECT 'Panathur Main Road', 14528, 20.00 UNION ALL
-  SELECT 'Panduranga Nagar', 10517, 20.00 UNION ALL
-  SELECT 'Parappana Agrahara', 10836, 1.60 UNION ALL
-  SELECT 'Pattandur Agrahara', 15511, 0.00 UNION ALL
-  SELECT 'Peenya', 10292, 4.00 UNION ALL
-  SELECT 'Phase 1 Electronics City', 8770, 12.00 UNION ALL
-  SELECT 'Phase 2 Electronic City', 9296, 4.00 UNION ALL
-  SELECT 'Phase 4 JP Nagar', 15207, 8.00 UNION ALL
-  SELECT 'Phase 5 JP Nagar', 8382, 68.00 UNION ALL
-  SELECT 'Phase 6 JP Nagar', 13763, 32.00 UNION ALL
-  SELECT 'Phase 7 JP Nagar', 10274, 1.20 UNION ALL
-  SELECT 'Phase 8th JP Nagar', 8388, 4.00 UNION ALL
-  SELECT 'Phase 9th JP Nagar', 9696, 4.00 UNION ALL
-  SELECT 'Pragathi Nagar', 10763, 8.00 UNION ALL
-  SELECT 'Prakruthi Nagar Kogilu', 10242, 0.00 UNION ALL
-  SELECT 'Pulikeshi Nagar', 11474, 1.60 UNION ALL
-  SELECT 'Queens Road', 16096, 12.00 UNION ALL
-  SELECT 'Rachenahalli', 11707, 16.00 UNION ALL
-  SELECT 'Rachenahalli Main Road', 11878, 20.00 UNION ALL
-  SELECT 'Rajajinagar', 23702, 12.00 UNION ALL
-  SELECT 'Ramamurthi Nagar Main Road', 9694, 24.00 UNION ALL
-  SELECT 'Ramamurthy Nagar', 6684, 28.00 UNION ALL
-  SELECT 'Rayasandra', 9449, 32.00 UNION ALL
-  SELECT 'Rayasandra Main Road', 9439, 4.00 UNION ALL
-  SELECT 'Richards Town', 14985, 4.00 UNION ALL
-  SELECT 'Richmond Road', 19076, 4.00 UNION ALL
-  SELECT 'Richmond Town', 18090, 4.00 UNION ALL
-  SELECT 'RK Hegde Nagar', 11860, 12.00 UNION ALL
-  SELECT 'RMV Extension Stage 2nd RMV', 10524, 20.00 UNION ALL
-  SELECT 'RR Nagar', 8350, 8.00 UNION ALL
-  SELECT 'RT Nagar', 6554, 16.00 UNION ALL
-  SELECT 'Sadashiva Nagar', 23716, 0.00 UNION ALL
-  SELECT 'Sahakar Nagar', 9334, 24.00 UNION ALL
-  SELECT 'Sai Baba Temple Road', 7758, 4.00 UNION ALL
-  SELECT 'Saint Johns Road', 17221, 20.00 UNION ALL
-  SELECT 'Sampigehalli Main Road', 8880, 0.00 UNION ALL
-  SELECT 'Sanjay Nagar Main Road', 10609, 4.00 UNION ALL
-  SELECT 'Sanjayanagara', 10152, 4.00 UNION ALL
-  SELECT 'Sankey Road', 17463, 24.00 UNION ALL
-  SELECT 'Sarjapur Road', 11993, 4.00 UNION ALL
-  SELECT 'Sarjapura', 12130, 4.00 UNION ALL
-  SELECT 'Sarjapura Attibele Road', 11634, 0.80 UNION ALL
-  SELECT 'Sector 1st HSR Layout', 9844, 1.20 UNION ALL
-  SELECT 'Sector 7 HSR Layout', 9549, 4.00 UNION ALL
-  SELECT 'Seegehalli', 9229, 4.00 UNION ALL
-  SELECT 'Seegehalli Main Road', 10696, 8.00 UNION ALL
-  SELECT 'Seegehalli Road', 9236, 4.00 UNION ALL
-  SELECT 'Seshadripuram', 13425, 4.00 UNION ALL
-  SELECT 'Seshadripuram Main Road', 13578, 0.00 UNION ALL
-  SELECT 'Shampura Main Road', 6820, 56.00 UNION ALL
-  SELECT 'Shankarnag Road', 8834, 0.00 UNION ALL
-  SELECT 'Shanti Nagar', 13254, 8.00 UNION ALL
-  SELECT 'Shivaji Nagar', 11356, 4.00 UNION ALL
-  SELECT 'Silver County Road', 12071, 4.00 UNION ALL
-  SELECT 'Singasandra', 11729, 0.00 UNION ALL
-  SELECT 'Sivanchetti Gardens', 17373, 16.00 UNION ALL
-  SELECT 'Sompura', 9537, 48.00 UNION ALL
-  SELECT 'Soukya Road', 9339, 1.60 UNION ALL
-  SELECT 'Spencer Road', 11474, 1.60 UNION ALL
-  SELECT 'Stage 1 BTM Layout', 13429, 4.00 UNION ALL
-  SELECT 'Stage 2 RMV', 10910, 44.00 UNION ALL
-  SELECT 'Stage 2nd Banashankari', 16006, 4.00 UNION ALL
-  SELECT 'Stage 2nd BTM Layout', 10570, 16.00 UNION ALL
-  SELECT 'Stage 3rd Banashankari', 9615, 36.00 UNION ALL
-  SELECT 'Stage 6th Banashankari', 11334, 24.00 UNION ALL
-  SELECT 'Subramanyapura', 8492, 52.00 UNION ALL
-  SELECT 'Subramanyapura Main Road', 8308, 44.00 UNION ALL
-  SELECT 'Talaghattapura', 9336, 20.00 UNION ALL
-  SELECT 'Tavarekere Main Road', 10204, 0.00 UNION ALL
-  SELECT 'Thalagattapura Main Road', 9398, 16.00 UNION ALL
-  SELECT 'Thambu Chetty Palya', 6243, 4.00 UNION ALL
-  SELECT 'Thambu Chetty Palya Main Road', 9412, 28.00 UNION ALL
-  SELECT 'Thanisandra', 11638, 8.00 UNION ALL
-  SELECT 'Thanisandra Main Road', 11376, 8.00 UNION ALL
-  SELECT 'Thimmaiah Road', 16215, 12.00 UNION ALL
-  SELECT 'Thubarahalli', 8037, 12.00 UNION ALL
-  SELECT 'Thurahalli', 11256, 0.00 UNION ALL
-  SELECT 'Tumkur Road', 12073, 0.80 UNION ALL
-  SELECT 'Ulsoor Road', 16806, 4.00 UNION ALL
-  SELECT 'Uttarahalli Hobli', 8328, 44.00 UNION ALL
-  SELECT 'Uttarahalli Main Road', 9197, 24.00 UNION ALL
-  SELECT 'Vajarahalli', 11681, 152.00 UNION ALL
-  SELECT 'Varthur', 13213, 4.00 UNION ALL
-  SELECT 'Varthur Road', 11305, 24.00 UNION ALL
-  SELECT 'Vasanth Nagar', 18104, 8.00 UNION ALL
-  SELECT 'Veerasagara Main Road', 9437, 0.00 UNION ALL
-  SELECT 'Vidyaranyapura', 6796, 4.00 UNION ALL
-  SELECT 'Vidyaranyapura Main Road', 6823, 12.00 UNION ALL
-  SELECT 'Vignan Nagar', 6727, 12.00 UNION ALL
-  SELECT 'Vijaya Bank Layout Bommanahalli', 7976, 8.00 UNION ALL
-  SELECT 'Vijayanagar', 9224, 16.00 UNION ALL
-  SELECT 'Vittal Mallya Road', 27642, 16.00 UNION ALL
-  SELECT 'Viviani Road', 14903, 0.40 UNION ALL
-  SELECT 'Wheeler Road', 11237, 0.80 UNION ALL
-  SELECT 'Whitefield', 13206, 8.00 UNION ALL
-  SELECT 'Whitefield Hoskote Road', 10215, 16.00 UNION ALL
-  SELECT 'Whitefield Main Road', 12522, 8.00 UNION ALL
-  SELECT 'Wilson Garden', 10778, 4.00 UNION ALL
-  SELECT 'Wind Tunnel Road', 11103, 112.00 UNION ALL
-  SELECT 'Yamare', 12103, 8.00 UNION ALL
-  SELECT 'Yamare Village', 11789, 16.00 UNION ALL
-  SELECT 'Yelahanka', 9997, 8.00 UNION ALL
-  SELECT 'Yelahanka Airforce Base', 9891, 20.00 UNION ALL
-  SELECT 'Yelahanka New Town', 9447, 28.00 UNION ALL
-  SELECT 'Yelahanka Road', 7955, 16.00 UNION ALL
-  SELECT 'Yelenahalli Main Road', 10627, 0.00 UNION ALL
-  SELECT 'Yemalur', 20174, 24.00 UNION ALL
-  SELECT 'Yemalur Main Road', 18263, 8.00 UNION ALL
-  SELECT 'Yeswanthpur', 13280, 4.00
-) AS v
+JOIN (VALUES
+  ('1st Block Rajajinagar', 25200, 24.00),
+  ('Aavalahalli', 11554, 4.00),
+  ('Adarsh Palm Retreat', 18758, 2.00),
+  ('AECS Layout Marathahalli', 12519, 176.00),
+  ('Aga Abbas Ali Road', 16912, -4.00),
+  ('Agrahara Layout Main Road', 10412, -16.00),
+  ('Agrahara Main Road', 10409, 4.00),
+  ('Akshayanagar', 10712, 1.60),
+  ('Allalasandra Yelahanka', 10648, -24.00),
+  ('Ambalipura', 11682, 28.00),
+  ('Ambalipura Haralur', 14407, 20.00),
+  ('Ambalipura Sarjapur Road', 11885, 4.00),
+  ('Amrutahalli', 7874, -1.20),
+  ('Amruthahalli Main Road', 8894, -4.00),
+  ('Ananth Nagar', 6050, -4.00),
+  ('Anekal', 12703, 20.00),
+  ('Anekal Hosur Road', 12672, 20.00),
+  ('Anekal Main Road', 7406, 48.00),
+  ('AnjanaPura', 6991, 24.00),
+  ('Anjanapura Main Road', 9492, 0.00),
+  ('Arekere', 8368, -4.00),
+  ('Armane Nagar', 23451, 0.00),
+  ('Ashok Nagar', 27944, 12.00),
+  ('Attibele', 6775, 24.00),
+  ('Attibele Anekal Road', 6881, -28.00),
+  ('Attur Lake Road', 9463, 28.00),
+  ('Ayyappa Nagar Main Road', 9441, -4.00),
+  ('Bagalur Colony', 9962, 4.00),
+  ('Bagalur Main Road', 10372, 16.00),
+  ('Bagaluru', 10151, 12.00),
+  ('Balagere', 12284, -0.40),
+  ('Balagere Road', 13074, 16.00),
+  ('Banashankari', 10948, 24.00),
+  ('Banaswadi', 8920, 4.00),
+  ('Bangalore Chennai Highway', 8705, 20.00),
+  ('Bannerghatta Main Road', 10024, 4.00),
+  ('Bannerughatta', 12891, 12.00),
+  ('Basapura Main Road', 10415, 36.00),
+  ('Basapura Village Road', 10483, 16.00),
+  ('Basavanagudi', 14896, 4.00),
+  ('Basaveshwar Nagar', 10949, 84.00),
+  ('Battarahalli', 7446, -68.00),
+  ('Begur', 10508, 40.00),
+  ('Begur Hulimavu Road', 9286, 116.00),
+  ('Begur Koppa Road', 9234, 60.00),
+  ('Begur Road', 9669, 20.00),
+  ('Belathur', 8853, 8.00),
+  ('Belathur Main Road', 9972, 52.00),
+  ('Bellahalli Main Road', 10691, 4.00),
+  ('Bellandur', 15106, 4.00),
+  ('Bellary Road', 9911, 4.00),
+  ('Bengaluru Kanakapura Road', 10135, 4.00),
+  ('Bengaluru Main Road', 6775, 24.00),
+  ('Benson Town', 13503, 4.00),
+  ('Bhattarahalli', 10470, 24.00),
+  ('Bhoganhalli', 16095, 16.00),
+  ('Bhoopasandra Main Road', 10133, 0.00),
+  ('Bidarahalli', 10601, 1.20),
+  ('Bilekahalli', 7873, 8.00),
+  ('Bileshivale Main Road', 10379, 4.00),
+  ('Binny Pete', 14379, 8.00),
+  ('Block 1st Koramangala', 19019, 0.00),
+  ('Block 7th Jayanagar', 16583, 16.00),
+  ('Bommanahalli', 7433, 16.00),
+  ('Bommasandra', 7534, 40.00),
+  ('Bommasandra Jigani Link Road', 7208, 48.00),
+  ('Borewell Road', 12780, 8.00),
+  ('Brookefield', 11118, 16.00),
+  ('BTM Layout', 10086, 20.00),
+  ('Budigere', 10956, 8.00),
+  ('Budigere Cross', 11815, 32.00),
+  ('Budigere Road', 11495, 1.20),
+  ('Byatarayanapura', 16155, 72.00),
+  ('Cambridge Layout', 16596, 1.60),
+  ('Cambridge Road', 16840, 0.00),
+  ('Carmelaram', 11806, 20.00),
+  ('Chambenahalli', 8864, 12.00),
+  ('Chandapura', 6496, 20.00),
+  ('Chandapura Anekal Road', 7671, 32.00),
+  ('Chandapura Dommasandra Road', 7560, 0.00),
+  ('Channasandra', 10867, 44.00),
+  ('Channasandra Main Road', 10373, 12.00),
+  ('Chellikere', 11464, 12.00),
+  ('Chikka Thirupati Road', 12145, 4.00),
+  ('Chikkakannalli', 12832, 1.20),
+  ('Chokkanahalli', 10671, 0.80),
+  ('Choodasandra', 10377, 8.00),
+  ('Chunchgatta Main Road', 15309, 0.00),
+  ('Church Street', 26949, 36.00),
+  ('Coles Road', 11535, 0.00),
+  ('Cooke Town', 12970, 0.00),
+  ('Cox Town', 10074, 8.00),
+  ('Crescent Road', 13573, 0.00),
+  ('Cubbon Road', 13877, 12.00),
+  ('Cunningham Road', 18530, 8.00),
+  ('CV Raman Nagar', 9044, 12.00),
+  ('Dasarahalli Main Road', 11542, 4.00),
+  ('Davis Road', 13684, 4.00),
+  ('Defence Colony Indiranagar', 23284, 0.80),
+  ('Devanahalli', 9568, 16.00),
+  ('Devarabisanahalli', 16444, 0.00),
+  ('Devasthanagalu', 13436, 8.00),
+  ('Devinagar', 9100, 8.00),
+  ('Dickenson Road', 17373, 16.00),
+  ('Doddaballapur Main Road', 10042, 8.00),
+  ('Doddaballapura', 11564, 0.00),
+  ('Doddaballapura Main Road', 10037, 8.00),
+  ('Doddagubbi Main Road', 10394, 0.00),
+  ('Doddakallasandra', 9307, 16.00),
+  ('Doddakammanahalli Main Road', 11092, 32.00),
+  ('Doddakannelli', 12133, 16.00),
+  ('Doddakannelli Chikkanayakana Halli Road', 11836, 20.00),
+  ('Doddakannelli kaadubeesanahalli Road', 17967, 4.00),
+  ('Doddanagamangala Road', 9568, 0.00),
+  ('Doddanekundi', 6994, 12.00),
+  ('Doddanekundi Main Road', 7034, 12.00),
+  ('Dollars Colony Stage 2nd RMV', 13352, 56.00),
+  ('Domlur', 12247, 0.80),
+  ('Dommasandra', 10940, 0.40),
+  ('Double Road', 14455, 36.00),
+  ('Dr Vishnuvardhan Road', 8109, 8.00),
+  ('ECC Road', 15378, 1.60),
+  ('Electronic City', 8879, 24.00),
+  ('EPIP Zone', 16859, 4.00),
+  ('Gear School Road', 15423, 16.00),
+  ('Giri Nagar', 8615, 0.80),
+  ('GM Palya Main Road', 8280, 44.00),
+  ('Gottigere', 8923, 44.00),
+  ('Green Glen Layout', 15058, 12.00),
+  ('Gubbalala', 8490, 12.00),
+  ('Gubbalala Main Road', 8418, 16.00),
+  ('Gunjur', 10991, 8.00),
+  ('Gunjur Balagere Road', 10830, 0.00),
+  ('Gunjur Doddakannelli Road', 10480, 0.00),
+  ('Hadosiddapura', 14559, 4.00),
+  ('HAL', 15471, 0.80),
+  ('HAL Old Airport Road', 13580, 44.00),
+  ('Halasuru', 16977, 4.00),
+  ('Haralur', 13398, 12.00),
+  ('Haralur Main Road', 12633, 4.00),
+  ('Harlur', 12164, 36.00),
+  ('HBR Layout', 8273, 16.00),
+  ('Hebbal', 16337, 8.00),
+  ('Hebbal Kempapura', 9389, 8.00),
+  ('Hennur Bagalur Main Road', 9783, 4.00),
+  ('Hennur Bande', 11500, 12.00),
+  ('Hennur Gardens', 9986, 4.00),
+  ('Hennur Main Road', 10261, 1.60),
+  ('Hesarghatta Road', 10687, 8.00),
+  ('HMT Main Road', 10000, 0.80),
+  ('Holiday Village Road', 10491, 1.60),
+  ('Hongasandra', 6472, 0.00),
+  ('Hoodi', 9916, 1.20),
+  ('Hoodi Main Road', 9902, 16.00),
+  ('Horamavu', 7143, 16.00),
+  ('Horamavu Agara', 7258, 12.00),
+  ('Horamavu Agara Main Road', 7091, 16.00),
+  ('Horamavu Agara Road', 9975, 4.00),
+  ('Horamavu Main Road', 6995, 20.00),
+  ('Hosa Road', 10196, 16.00),
+  ('Hosa Road Area', 10720, 12.00),
+  ('Hosabasavanapura', 10391, 0.00),
+  ('Hosahalli Main Road', 14358, 8.00),
+  ('Hosapalya Main Road', 9403, 0.00),
+  ('Hoskote', 6944, 64.00),
+  ('Hoskote Chintamani Road', 7060, 72.00),
+  ('Hoskote Malur Road', 6781, 0.00),
+  ('Hosur Main Road', 16204, 4.00),
+  ('Hosur Road', 9178, 16.00),
+  ('HRBR Layout', 13259, 8.00),
+  ('HSR Extension', 9631, 4.00),
+  ('HSR Layout', 9363, 0.80),
+  ('Hulimangala Road', 8077, 0.00),
+  ('Hulimavu', 12598, 24.00),
+  ('Hulimavu Lake Road', 12608, 32.00),
+  ('Huskur Road', 7574, 60.00),
+  ('Hutchins Road', 12900, 4.00),
+  ('Huvinayakanahalli', 8776, 48.00),
+  ('Immadihalli', 9094, 44.00),
+  ('Indiranagar', 18773, 1.20),
+  ('ITPL', 15167, 56.00),
+  ('ITPL Main Road', 10187, 8.00),
+  ('Ittamadu Main Road', 10324, 20.00),
+  ('Jagajeevanram Nagar', 14425, 8.00),
+  ('Jakkur', 10907, 4.00),
+  ('Jakkur Road', 7937, 4.00),
+  ('Jakkuru Layout', 13692, 72.00),
+  ('Jalahalli', 8565, 0.80),
+  ('Jalahalli Cross Road', 10146, 0.00),
+  ('Jalahalli Road', 8491, 4.00),
+  ('Jalahalli West', 8387, 12.00),
+  ('Jambusavari Dinne Main Road', 9882, 8.00),
+  ('Jayamahal', 15534, 4.00),
+  ('Jayamahal Main Road', 15024, 1.20),
+  ('Jayanagar', 14290, 12.00),
+  ('JCR Layout', 14823, 24.00),
+  ('Jeevan Bima Nagar', 7850, 84.00),
+  ('Jigani', 5495, 20.00),
+  ('JP Nagar', 9893, 8.00),
+  ('Judicial Layout', 14004, 48.00),
+  ('K Channasandra Main Road', 6253, 0.00),
+  ('K Narayanapura Main Road', 10631, 12.00),
+  ('Kadabeesanahalli', 15937, 4.00),
+  ('Kadubeesanahalli', 11389, 36.00),
+  ('Kadubeesanahalli Road', 14250, 24.00),
+  ('Kadugodi', 9582, 4.00),
+  ('Kaggadasapura', 7032, 52.00),
+  ('Kaggadasapura Main Road', 8288, 36.00),
+  ('Kaikondrahalli', 14535, 24.00),
+  ('Kalena Agrahara', 10760, 4.00),
+  ('Kalkere Main Road', 7009, 20.00),
+  ('Kalyan Nagar', 9298, 12.00),
+  ('Kammanahalli', 16675, 4.00),
+  ('Kammanahalli Main Road', 9048, 8.00),
+  ('Kammasandra Electronic City', 6068, 4.00),
+  ('Kanakapura', 12920, 40.00),
+  ('Kanakapura Road', 10494, 8.00),
+  ('Kannamangala', 9824, 2.00),
+  ('Kannamangala Main Road', 10218, 12.00),
+  ('Kannuru Road', 10386, 4.00),
+  ('Kasavanahalli', 9764, 0.00),
+  ('Kasavanahalli Main Road', 12203, 12.00),
+  ('Kasturba Road', 26836, 32.00),
+  ('Kasturi Nagar', 8063, 0.00),
+  ('Kathriguppe Main Road', 13241, 1.20),
+  ('Kempegowda International Airport Road', 11071, 12.00),
+  ('Kengeri', 7480, 28.00),
+  ('Kengeri Kommaghatta Road', 7138, 20.00),
+  ('Kengeri Main Road', 6946, 16.00),
+  ('Kengeri Satellite Town', 7029, 8.00),
+  ('Kithaganur Main Road', 10115, 20.00),
+  ('Kodathi', 10715, 8.00),
+  ('Kodichikkanahalli Main Road', 7683, 4.00),
+  ('Kodigehalli', 6864, 60.00),
+  ('Kodigehalli Main Road', 7798, 20.00),
+  ('Kodihalli', 11694, 0.00),
+  ('Kodipalya Road', 7396, 28.00),
+  ('Kogilu', 10523, 8.00),
+  ('Kogilu Main Road', 10641, 0.80),
+  ('Konanakunte', 15387, 48.00),
+  ('Koppa Road', 10594, 0.80),
+  ('Koramangala', 15587, 4.00),
+  ('Kothanur', 10105, 12.00),
+  ('Krishna Rajendra Road', 12426, 0.00),
+  ('Krishnarajapura', 10558, 12.00),
+  ('Kudlu', 8389, 16.00),
+  ('Kudlu Gate', 13314, 1.20),
+  ('Kudlu Main Road', 11878, 4.00),
+  ('Kumaraswamy Layout', 8267, 24.00),
+  ('Kundalahalli', 10246, 8.00),
+  ('KV Jairam Road', 11583, 12.00),
+  ('Lal Bagh Main Road', 22606, 1.20),
+  ('Langford Road', 17544, 8.00),
+  ('Lavelle Road', 24178, 4.00),
+  ('Magadi Main Road', 12833, 8.00),
+  ('Mahadevapura', 8516, 4.00),
+  ('Mahatma Gandhi Road', 16068, 60.00),
+  ('Mallasandra', 11199, 20.00),
+  ('Malleshpalya Main Road', 8310, 44.00),
+  ('Malleshwaram', 15109, 0.80),
+  ('Manayata Tech Park', 12411, 108.00),
+  ('Manyata Tech Park Road', 11712, 12.00),
+  ('Marathahalli', 9242, 8.00),
+  ('Marathahalli Main Road', 8748, 44.00),
+  ('Marathahalli Sarjapur Outer Ring Road', 15145, 16.00),
+  ('Mathikere', 10124, 16.00),
+  ('Mavalli', 16429, 0.80),
+  ('Medahalli Kadugodi Road', 11651, 8.00),
+  ('Millers Road', 13658, 2.00),
+  ('Mission Road', 14984, 8.00),
+  ('MSR College Road', 10743, 1.60),
+  ('Munnekollal', 7564, 8.00),
+  ('Murgesh Pallya', 7603, 92.00),
+  ('Museum Road', 28255, 16.00),
+  ('Mysore Road', 8249, 1.20),
+  ('Naagarabhaavi', 6887, 12.00),
+  ('Nagarabhavi Main Road', 8217, 16.00),
+  ('Nagasandra', 9695, 16.00),
+  ('Nagasandra Main Road', 10147, 8.00),
+  ('Nagavara', 12167, 16.00),
+  ('Nallurhalli', 12607, 12.00),
+  ('Nandi Durga Road', 13732, 4.00),
+  ('Neeladri Road', 8669, 44.00),
+  ('New Airport Road', 10243, 8.00),
+  ('New BEL Road', 10403, 4.00),
+  ('Nice Ring Road', 9269, 24.00),
+  ('NRI Layout Main Road', 6410, 0.00),
+  ('Old Madras Road', 10714, 8.00),
+  ('Old Mysuru Road', 13279, 0.00),
+  ('Outer Ring Road', 9920, 0.00),
+  ('Padmanabhanagar', 8405, 72.00),
+  ('Pai Layout Mahadevapura', 7040, 1.60),
+  ('Palace Road', 17123, 4.00),
+  ('Panathur', 14536, 24.00),
+  ('Panathur Main Road', 14528, 20.00),
+  ('Panduranga Nagar', 10517, 20.00),
+  ('Parappana Agrahara', 10836, 1.60),
+  ('Pattandur Agrahara', 15511, 0.00),
+  ('Peenya', 10292, 4.00),
+  ('Phase 1 Electronics City', 8770, 12.00),
+  ('Phase 2 Electronic City', 9296, 4.00),
+  ('Phase 4 JP Nagar', 15207, 8.00),
+  ('Phase 5 JP Nagar', 8382, 68.00),
+  ('Phase 6 JP Nagar', 13763, 32.00),
+  ('Phase 7 JP Nagar', 10274, 1.20),
+  ('Phase 8th JP Nagar', 8388, 4.00),
+  ('Phase 9th JP Nagar', 9696, 4.00),
+  ('Pragathi Nagar', 10763, 8.00),
+  ('Prakruthi Nagar Kogilu', 10242, 0.00),
+  ('Pulikeshi Nagar', 11474, 1.60),
+  ('Queens Road', 16096, 12.00),
+  ('Rachenahalli', 11707, 16.00),
+  ('Rachenahalli Main Road', 11878, 20.00),
+  ('Rajajinagar', 23702, 12.00),
+  ('Ramamurthi Nagar Main Road', 9694, 24.00),
+  ('Ramamurthy Nagar', 6684, 28.00),
+  ('Rayasandra', 9449, 32.00),
+  ('Rayasandra Main Road', 9439, 4.00),
+  ('Richards Town', 14985, 4.00),
+  ('Richmond Road', 19076, 4.00),
+  ('Richmond Town', 18090, 4.00),
+  ('RK Hegde Nagar', 11860, 12.00),
+  ('RMV Extension Stage 2nd RMV', 10524, 20.00),
+  ('RR Nagar', 8350, 8.00),
+  ('RT Nagar', 6554, 16.00),
+  ('Sadashiva Nagar', 23716, 0.00),
+  ('Sahakar Nagar', 9334, 24.00),
+  ('Sai Baba Temple Road', 7758, 4.00),
+  ('Saint Johns Road', 17221, 20.00),
+  ('Sampigehalli Main Road', 8880, 0.00),
+  ('Sanjay Nagar Main Road', 10609, 4.00),
+  ('Sanjayanagara', 10152, 4.00),
+  ('Sankey Road', 17463, 24.00),
+  ('Sarjapur Road', 11993, 4.00),
+  ('Sarjapura', 12130, 4.00),
+  ('Sarjapura Attibele Road', 11634, 0.80),
+  ('Sector 1st HSR Layout', 9844, 1.20),
+  ('Sector 7 HSR Layout', 9549, 4.00),
+  ('Seegehalli', 9229, 4.00),
+  ('Seegehalli Main Road', 10696, 8.00),
+  ('Seegehalli Road', 9236, 4.00),
+  ('Seshadripuram', 13425, 4.00),
+  ('Seshadripuram Main Road', 13578, 0.00),
+  ('Shampura Main Road', 6820, 56.00),
+  ('Shankarnag Road', 8834, 0.00),
+  ('Shanti Nagar', 13254, 8.00),
+  ('Shivaji Nagar', 11356, 4.00),
+  ('Silver County Road', 12071, 4.00),
+  ('Singasandra', 11729, 0.00),
+  ('Sivanchetti Gardens', 17373, 16.00),
+  ('Sompura', 9537, 48.00),
+  ('Soukya Road', 9339, 1.60),
+  ('Spencer Road', 11474, 1.60),
+  ('Stage 1 BTM Layout', 13429, 4.00),
+  ('Stage 2 RMV', 10910, 44.00),
+  ('Stage 2nd Banashankari', 16006, 4.00),
+  ('Stage 2nd BTM Layout', 10570, 16.00),
+  ('Stage 3rd Banashankari', 9615, 36.00),
+  ('Stage 6th Banashankari', 11334, 24.00),
+  ('Subramanyapura', 8492, 52.00),
+  ('Subramanyapura Main Road', 8308, 44.00),
+  ('Talaghattapura', 9336, 20.00),
+  ('Tavarekere Main Road', 10204, 0.00),
+  ('Thalagattapura Main Road', 9398, 16.00),
+  ('Thambu Chetty Palya', 6243, 4.00),
+  ('Thambu Chetty Palya Main Road', 9412, 28.00),
+  ('Thanisandra', 11638, 8.00),
+  ('Thanisandra Main Road', 11376, 8.00),
+  ('Thimmaiah Road', 16215, 12.00),
+  ('Thubarahalli', 8037, 12.00),
+  ('Thurahalli', 11256, 0.00),
+  ('Tumkur Road', 12073, 0.80),
+  ('Ulsoor Road', 16806, 4.00),
+  ('Uttarahalli Hobli', 8328, 44.00),
+  ('Uttarahalli Main Road', 9197, 24.00),
+  ('Vajarahalli', 11681, 152.00),
+  ('Varthur', 13213, 4.00),
+  ('Varthur Road', 11305, 24.00),
+  ('Vasanth Nagar', 18104, 8.00),
+  ('Veerasagara Main Road', 9437, 0.00),
+  ('Vidyaranyapura', 6796, 4.00),
+  ('Vidyaranyapura Main Road', 6823, 12.00),
+  ('Vignan Nagar', 6727, 12.00),
+  ('Vijaya Bank Layout Bommanahalli', 7976, 8.00),
+  ('Vijayanagar', 9224, 16.00),
+  ('Vittal Mallya Road', 27642, 16.00),
+  ('Viviani Road', 14903, 0.40),
+  ('Wheeler Road', 11237, 0.80),
+  ('Whitefield', 13206, 8.00),
+  ('Whitefield Hoskote Road', 10215, 16.00),
+  ('Whitefield Main Road', 12522, 8.00),
+  ('Wilson Garden', 10778, 4.00),
+  ('Wind Tunnel Road', 11103, 112.00),
+  ('Yamare', 12103, 8.00),
+  ('Yamare Village', 11789, 16.00),
+  ('Yelahanka', 9997, 8.00),
+  ('Yelahanka Airforce Base', 9891, 20.00),
+  ('Yelahanka New Town', 9447, 28.00),
+  ('Yelahanka Road', 7955, 16.00),
+  ('Yelenahalli Main Road', 10627, 0.00),
+  ('Yemalur', 20174, 24.00),
+  ('Yemalur Main Road', 18263, 8.00),
+  ('Yeswanthpur', 13280, 4.00)
+) AS v(name, current_price, growth_1yr)
 ON a.name = v.name
 ) AS computed;
 
