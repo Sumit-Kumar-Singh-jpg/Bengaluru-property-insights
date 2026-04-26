@@ -43,4 +43,9 @@ public class AreaController {
     public String getRoi(@PathVariable Integer id) {
         return "ROI: " + service.calculateROI(id) + "%";
     }
+    @GetMapping("/demo/threads")
+public String demoThreads() {
+    service.demoMultithreading();
+    return "Check the terminal console for thread output. Two threads should have printed their names.";
+}
 }
