@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
 
 const DynamicMap = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
@@ -10,6 +11,7 @@ const DynamicMap = dynamic(() => import('@/components/MapComponent'), {
 });
 
 export default function Home() {
+  const router = useRouter();
   const [areas, setAreas] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
@@ -39,6 +41,14 @@ export default function Home() {
   const filteredAreas = areas.filter((a) =>
     a.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  const handleAnalyze = () => {
+    if (filteredAreas.length > 0) {
+      router.push(`/area/${filteredAreas[0].area_id}`);
+    } else {
+      alert("No areas found matching your search.");
+    }
+  };
 
   return (
     <div className="bg-background text-on-surface min-h-screen pb-24 md:pb-12">
@@ -87,8 +97,14 @@ export default function Home() {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleAnalyze();
+              }}
             />
-            <button className="bg-primary hover:bg-primary-container text-on-primary px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2 group">
+            <button 
+              onClick={handleAnalyze}
+              className="bg-primary hover:bg-primary-container text-on-primary px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2 group"
+            >
               <span>Analyze</span>
             </button>
           </div>

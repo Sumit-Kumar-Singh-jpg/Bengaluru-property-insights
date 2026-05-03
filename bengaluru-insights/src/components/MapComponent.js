@@ -19,7 +19,7 @@ export default function MapComponent({ areas }) {
   return (
     <MapContainer 
       center={center} 
-      zoom={11} 
+      zoom={12} 
       style={{ height: '100%', width: '100%', zIndex: 0 }}
       zoomControl={false}
     >

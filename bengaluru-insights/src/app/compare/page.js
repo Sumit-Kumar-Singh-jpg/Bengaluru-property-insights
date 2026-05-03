@@ -139,7 +139,7 @@ function CompareContent() {
             Historical Trajectory Comparison (₹ per sqft)
           </div>
           <div style={{ height: '400px', width: '100%' }}>
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height={400}>
               <LineChart data={chartData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
                 <XAxis dataKey="year" stroke="var(--color-outline)" tickLine={false} axisLine={false} />
                 <YAxis hide domain={['dataMin', 'dataMax']} />

@@ -88,7 +88,7 @@ export default function AreaDetail({ params }) {
             Price History (₹ / sqft)
           </div>
           <div style={{ height: '350px', width: '100%' }}>
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height={350}>
               <LineChart data={data.history} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
                 <XAxis dataKey="year" stroke="var(--color-outline)" tickLine={false} axisLine={false} />
                 <YAxis hide domain={['dataMin', 'dataMax']} />
